@@ -17,11 +17,19 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Mapping Resource -->
-        <mapping class="com.prowings.entity.Car" />
+<!--         
+		<mapping class="com.prowings.entity.Car" />
         <mapping class="com.prowings.entity.inheritance.Employee" />
         <mapping class="com.prowings.entity.inheritance.Manager" />
         <mapping class="com.prowings.entity.inheritance.Cleark" />
         <mapping class="com.prowings.entity.associations.onetoone.Student" />
         <mapping class="com.prowings.entity.associations.onetoone.IdentityCard" />
+ 		<mapping class="com.prowings.entity.associations.onetoone.Customer" />
+        <mapping class="com.prowings.entity.associations.onetoone.Passport" />
+        <mapping class="com.prowings.entity.associations.onetomany.Author" />
+        <mapping class="com.prowings.entity.associations.onetomany.Book" />
+ -->        
+        <mapping class="com.prowings.entity.associations.onetomany.bidirectional.Author" />
+        <mapping class="com.prowings.entity.associations.onetomany.bidirectional.Book" />
     </session-factory>
 </hibernate-configuration>
