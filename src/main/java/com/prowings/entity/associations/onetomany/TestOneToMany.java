@@ -25,7 +25,7 @@ public class TestOneToMany {
 		
 		Author author = new Author("J. K. Rolling", books);
 		
-//		session.persist(author);
+		session.persist(author);
 		
 		Author fetchedAuther = session.get(Author.class, 1L);
 		

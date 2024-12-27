@@ -2,6 +2,10 @@ package com.prowings.entity.associations.onetomany;
 
 import java.util.List;
 
+import org.hibernate.annotations.NamedNativeQuery;
+import org.hibernate.annotations.NamedQueries;
+import org.hibernate.annotations.NamedQuery;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,6 +17,14 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 
 @Entity
+//@NamedQuery(name = "getAllAuthers", query = "from Author")
+
+@NamedQueries({
+			@NamedQuery(name = "getAllAuthers", query = "from Author"),
+			@NamedQuery(name = "getAllAuthersWithMin5Books", query = "from Author")
+		})
+
+@NamedNativeQuery(name = "SqlQuery1", query = "Select * from Author")
 public class Author {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

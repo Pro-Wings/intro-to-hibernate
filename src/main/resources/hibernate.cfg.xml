@@ -26,10 +26,10 @@
         <mapping class="com.prowings.entity.associations.onetoone.IdentityCard" />
  		<mapping class="com.prowings.entity.associations.onetoone.Customer" />
         <mapping class="com.prowings.entity.associations.onetoone.Passport" />
-        <mapping class="com.prowings.entity.associations.onetomany.Author" />
-        <mapping class="com.prowings.entity.associations.onetomany.Book" />
- -->        
         <mapping class="com.prowings.entity.associations.onetomany.bidirectional.Author" />
         <mapping class="com.prowings.entity.associations.onetomany.bidirectional.Book" />
+ -->        
+        <mapping class="com.prowings.entity.associations.onetomany.Author" />
+        <mapping class="com.prowings.entity.associations.onetomany.Book" />
     </session-factory>
 </hibernate-configuration>
