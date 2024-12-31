@@ -1,5 +1,8 @@
 package com.prowings.entity.firstlevelcache;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,6 +20,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Person {
 
 	@Id

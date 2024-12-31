@@ -2,35 +2,38 @@
  <!DOCTYPE hibernate-configuration PUBLIC
     "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-    <hibernate-configuration>
-    <session-factory>
-        <!-- JDBC Database Connection Settings -->
-        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/my-first-hibernate-db</property>
-        <property name="hibernate.connection.username">prowingsuser</property>
-        <property name="hibernate.connection.password">prowingsuser</property>
-        
-        <!-- Hibernate Settings -->
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
-        <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.format_sql">true</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+<hibernate-configuration>
+	<session-factory>
+		<!-- JDBC Database Connection Settings -->
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/my-first-hibernate-db</property>
+		<property name="hibernate.connection.username">prowingsuser</property>
+		<property name="hibernate.connection.password">prowingsuser</property>
 
-        <!-- Mapping Resource -->
-<!--         
-		<mapping class="com.prowings.entity.Car" />
-        <mapping class="com.prowings.entity.inheritance.Employee" />
-        <mapping class="com.prowings.entity.inheritance.Manager" />
-        <mapping class="com.prowings.entity.inheritance.Cleark" />
-        <mapping class="com.prowings.entity.associations.onetoone.Student" />
-        <mapping class="com.prowings.entity.associations.onetoone.IdentityCard" />
- 		<mapping class="com.prowings.entity.associations.onetoone.Customer" />
-        <mapping class="com.prowings.entity.associations.onetoone.Passport" />
-        <mapping class="com.prowings.entity.associations.onetomany.bidirectional.Author" />
-        <mapping class="com.prowings.entity.associations.onetomany.bidirectional.Book" />
-        <mapping class="com.prowings.entity.associations.onetomany.Author" />
-        <mapping class="com.prowings.entity.associations.onetomany.Book" />
- -->        
-        <mapping class="com.prowings.entity.firstlevelcache.Person" />
-    </session-factory>
+		<!-- Hibernate Settings -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Second-level cache settings -->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.internal.JCacheRegionFactory</property>
+        <property name="hibernate.javax.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property>
+        <property name="hibernate.javax.cache.uri">ehcache.xml</property>
+
+		<!-- Mapping Resource -->
+		<!-- <mapping class="com.prowings.entity.Car" /> <mapping class="com.prowings.entity.inheritance.Employee" 
+			/> <mapping class="com.prowings.entity.inheritance.Manager" /> <mapping class="com.prowings.entity.inheritance.Cleark" 
+			/> <mapping class="com.prowings.entity.associations.onetoone.Student" /> 
+			<mapping class="com.prowings.entity.associations.onetoone.IdentityCard" /> 
+			<mapping class="com.prowings.entity.associations.onetoone.Customer" /> <mapping 
+			class="com.prowings.entity.associations.onetoone.Passport" /> <mapping class="com.prowings.entity.associations.onetomany.bidirectional.Author" 
+			/> <mapping class="com.prowings.entity.associations.onetomany.bidirectional.Book" 
+			/> <mapping class="com.prowings.entity.associations.onetomany.Author" /> 
+			<mapping class="com.prowings.entity.associations.onetomany.Book" /> -->
+		<mapping class="com.prowings.entity.firstlevelcache.Person" />
+
+
+	</session-factory>
 </hibernate-configuration>
